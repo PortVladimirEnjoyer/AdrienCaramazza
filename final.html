@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrien Caramazza</title>
+    <!-- Add Jersey 20 font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: "Jersey 20", sans-serif;
+            background-color: #d0ccd0;
+            color: #06070e;
+            min-height: 100vh;
+            justify-content: space-around;
+            padding: 20px;
+            letter-spacing: 0.5px;
+        }
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 32px;
+            font-weight: normal;
+            background-color: transparent;
+            padding: 10px 15px;
+            border-radius: 5px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            color: #06070e;
+        }
+        .welcome {
+            font-size: 48px;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            opacity: 0;
+            animation: slideIn 1s forwards 0.5s;
+            color: #06070e;
+        }
+        .content-section {
+            width: 80%;
+            margin: 30px auto;
+            text-align: left;
+        }
+        .content-block {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 30px;
+            scroll-margin-top: 20px; /* For smooth scrolling */
+        }
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        .text-content {
+            flex: 1;
+            color: #06070e;
+        }
+        .image-placeholder {
+            flex: 1;
+            height: 250px;
+            background-color: rgba(6, 7, 14, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #06070e;
+            font-style: italic;
+            border: 1px solid rgba(6, 7, 14, 0.2);
+        }
+        h1, h2, h3 {
+            color: #06070e;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 2.8rem;
+        }
+        h3 {
+            font-size: 1.8rem;
+        }
+        h3 a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            padding-left: 30px;
+        }
+        h3 a::before {
+            content: "#";
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: #06070e;
+        }
+        h3 a:hover::before {
+            opacity: 1;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #06070e;
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section Styles */
+        .contact-section {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(6, 7, 14, 0.2);
+        }
+        
+        .contact-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #06070e;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #06070e;
+            transition: all 0.3s ease;
+            padding: 15px 25px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            font-size: 1.2rem;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 5px 15px rgba(6, 7, 14, 0.1);
+        }
+        
+        .contact-link i {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">Adrien Caramazza</div>
+    <div class="welcome">
+        <h1>Welcome to my page</h1>
+    </div>
+
+    <div class="content-section">
+        <div class="content-block" id="who-i-am">
+            <div class="text-content">
+                <h3><a href="#who-i-am">Who I Am</a></h3>
+                <p>I'm a student who enjoys exploring new ideas and building things in data science and machine learning.</p>
+                <p>I have a strong interest in math but also like experimenting with artistic concepts, sometimes blending both. Generally, I'm a calm person who values curiosity and creativity in different forms.</p>
+            </div>
+            <div class="image-placeholder">
+                [Profile Image]
+            </div>
+        </div>
+
+        <div class="content-block reverse" id="academic-journey">
+            <div class="text-content">
+                <h3><a href="#academic-journey">My Academic Journey</a></h3>
+                <p>Nunc blandit arcu vel sem pulvinar, et maximus ligula dapibus. Etiam sit amet lacinia tortor</p>
+                <p>Donec tempus metus erat, a fringilla magna euismod non. Phasellus vel turpis congue odio lacinia consectetur. </p>
+            </div>
+            <div class="image-placeholder">
+                [University Campus]
+            </div>
+        </div>
+
+        <div class="content-block" id="personal-projects">
+            <div class="text-content">
+                <h3><a href="#personal-projects">Personal Projects</a></h3>
+                <p>From a personalized os for quantitative finance , to a crypto app , passing by using showcasing ai and humain creativity.  </p>
+                <p>This is how i spend my free time and why i have such a high sleep debt. This is a documentation of all my projects , done or in progress. If there is more than that , I'll probably link a website somewhere. 
+                </p>
+            </div>
+            <div class="image-placeholder">
+                [Project Screenshot]
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section" id="contact">
+        <h1><a href="#contact" style="color: inherit; text-decoration: none;">Contact</a></h1>
+        <div class="contact-links">
+            <a href="mailto:your.email@example.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://t.me/yourusername" class="contact-link" target="_blank">
+                <i class="fab fa-telegram"></i>
+                <span>Telegram</span>
+            </a>
+            <a href="https://instagram.com/yourusername" class="contact-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add click handler for section links to prevent double-hash in URL
+        document.querySelectorAll('h3 a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                history.pushState(null, null, targetId);
+            });
+        });
+    </script>
+</body>
+</html>
